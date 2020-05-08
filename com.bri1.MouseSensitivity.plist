@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<!-- place in ~/Library/LaunchAgents -->
+<!-- set thinkpad bluetooth kb mouse sensitivity to 8 out of 9 -->
+<!-- since tpbk needs to run as root install it with suid:
+     sudo mkdir "/Library/Application Support/tpkb"
+     sudo cp tpkb "/Library/Application Support/tpkb"
+     sudo chown root:admin "/Library/Application Support/tpkb/tpkb"
+     sudo chmod a+rx "/Library/Application Support/tpkb/tpkb"
+     sudo chmod +s "/Library/Application Support/tpkb/tpkb"
+!-->
+<dict>
+    <key>Label</key>
+    <string>com.bri1.MouseSensitivity</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/tpkb</string>
+        <string>8</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
